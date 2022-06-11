@@ -9,5 +9,5 @@ public class AppDbContext : DbContext
     {
     }
 
-    public DbSet<Platform> MyProperty { get; set; }
+    public DbSet<Platform> Platforms { get; set; }
 }
