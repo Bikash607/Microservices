@@ -10,7 +10,7 @@ public class PlatformsController : ControllerBase
     [HttpPost("Test")]
     public ActionResult Index()
     {
-        Console.WriteLine("PlatformsController.Index()");
-        return Ok("PlatformsController.Index()");
+        Console.WriteLine("Inbound Post call to Command Service Index Method"); 
+        return Ok("Response from Command Service Index method");
     }
 }

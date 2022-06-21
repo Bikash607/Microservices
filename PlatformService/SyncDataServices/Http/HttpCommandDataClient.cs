@@ -20,13 +20,13 @@ public class HttpCommandDataClient : ICommandDataClient
         var httpContent = new StringContent(JsonSerializer.Serialize(platform), Encoding.UTF8, "application/json");
         var response = await _httpClient.PostAsync($"{_configuration["CommandService"]}", httpContent);
 
-        if(response.StatusCode != System.Net.HttpStatusCode.OK)
+        if(response.IsSuccessStatusCode)
         {
-             Console.WriteLine("Platform sent to command Failed");
+             Console.WriteLine("Sync Post call to command service is successful");      
         }
         else
         {
-            Console.WriteLine("Platform sent to command Sucessfully");
+           Console.WriteLine("Sync Post call to command service Failed");     
         }
     }
 }
